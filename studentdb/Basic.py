@@ -11,24 +11,24 @@ class UserLogin():
         self.root.title("ALCARMEN, BRANDON V.")
         self.root.geometry("500x500")
         self.root.resizable(False, False)
-
-        self.frame = Frame(self.root, bd=20)
+        self.root.configure(bg="#ADD8E6")
+        self.frame = Frame(self.root, bd=20, bg="#ADD8E6")
         self.frame.grid()
 
         # >>>>IDNO<<<<<
-        self.lbl_idno = Label(self.frame, text="IDNO", font="Verdana,20", bd=20)
+        self.lbl_idno = Label(self.frame, text="IDNO", font="Verdana,20", bd=20, bg="#ADD8E6")
         self.lbl_idno.grid(row=0, column=0)
 
         # >>>>LastName<<<<
-        self.lbl_Lastname = Label(self.frame, text="LASTNAME", font="Verdana,20", bd=20)
+        self.lbl_Lastname = Label(self.frame, text="LASTNAME", font="Verdana,20", bd=20, bg="#ADD8E6")
         self.lbl_Lastname.grid(row=1, column=0)
 
         # >>>FirstName<<<<
-        self.lbl_Firstname = Label(self.frame, text="FIRSTNAME", font="Verdana,20", bd=20)
+        self.lbl_Firstname = Label(self.frame, text="FIRSTNAME", font="Verdana,20", bd=20, bg="#ADD8E6")
         self.lbl_Firstname.grid(row=2, column=0)
 
         # >>>>Course<<<<
-        self.lbl_Course = Label(self.frame, text="COURSE:", font="Verdana,20", bd=20)
+        self.lbl_Course = Label(self.frame, text="COURSE:", font="Verdana,20", bd=20, bg="#ADD8E6")
         self.lbl_Course.grid(row=3, column=0)
         n = tk.StringVar()
         self.Course = ttk.Combobox(self.frame, width=27, textvariable=n)
@@ -37,7 +37,7 @@ class UserLogin():
         self.Course.current()
 
         # >>>>>Level<<<<<
-        self.lbl_Level = Label(self.frame, text="LEVEL:", font="Verdana,20", bd=20)
+        self.lbl_Level = Label(self.frame, text="LEVEL:", font="Verdana,20", bd=20, bg="#ADD8E6")
         self.lbl_Level.grid(row=4, column=0)
         L = tk.StringVar()
         self.Level = ttk.Combobox(self.frame, width=27, textvariable=L)
@@ -53,19 +53,21 @@ class UserLogin():
         self.txt_Firstname = Entry(self.frame, text="Firstname", font="Verdana,20")
         self.txt_Firstname.grid(row=2, column=1)
 
-        self.btn_Find = Button(self.frame, text="Find", font="Verdana,20", bg="Gold", command= self.findstudent)
-        self.btn_Find.grid(row=0, column=3, columnspan=2)
 
-        self.Butt = Frame(self.frame, bd=20, bg="Orange")
+
+        self.Butt = Frame(self.frame, bd=30, bg="Blue")
         self.Butt.grid(row=10, column=0, columnspan=2)
+        
+        self.btn_Find = Button(self.frame, text="Find", font="Verdana,20", bg="Gold", command= self.findstudent)
+        self.btn_Find.grid(row=0, column=3, columnspan=2, padx=10, sticky="w")
 
-        self.btn_New = Button(self.Butt, text="New", font="Verdana,20", command=self.newstudent)
+        self.btn_New = Button(self.Butt, text="New", font="Verdana,20", bg="Gold", command=self.newstudent)
         self.btn_New.grid(row=0, column=0, padx=10, sticky="w")
-        self.btn_Save = Button(self.Butt, text="Save", font="Verdana,20", command=self.savestudent)
+        self.btn_Save = Button(self.Butt, text="Save", font="Verdana,20", bg="Gold", command=self.savestudent)
         self.btn_Save.grid(row=0, column=2, padx=10, sticky="w")
-        self.btn_Delete = Button(self.Butt, text="Delete", font="Verdana,20", command=self.deletestudent)
+        self.btn_Delete = Button(self.Butt, text="Delete", font="Verdana,20", bg="Gold", command=self.deletestudent)
         self.btn_Delete.grid(row=0, column=4, padx=10, sticky="w")
-        self.btn_Update = Button(self.Butt, text="Update", font="Verdana,20", command= self.updatestudent)
+        self.btn_Update = Button(self.Butt, text="Update", font="Verdana,20", bg="Gold", command= self.updatestudent)
         self.btn_Update.grid(row=0, column=6, padx=10, sticky="w")
 
         self.root.eval("tk::PlaceWindow . center")
