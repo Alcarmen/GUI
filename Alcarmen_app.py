@@ -84,10 +84,10 @@ class UserLogin():
                 student = data[0]
                 self.txt_Lastname.delete(0, END)
                 self.txt_Firstname.delete(0, END)
-                self.txt_Lastname.insert(0, student['LastName'])
-                self.txt_Firstname.insert(0, student['FirstName'])
-                self.Course.set(student[Course])
-                self.Level.set(student[Level])
+                self.txt_Lastname.insert(0, student['lastname'])
+                self.txt_Firstname.insert(0, student['firstname'])
+                self.Course.set(student[course])
+                self.Level.set(student[level])
                 messagebox.showinfo("Student", "Student Found!")
                 message = f" Student Idno:\t\t {student['idno']}\n Student Lastname:\t {student['lastname']}\n Student Firstname:\t {student['firstname']}\n Student Course:\t\t {student['course']}\n Student Level:\t\t {student['level']}"
                 messagebox.showinfo("Student Info", message)
